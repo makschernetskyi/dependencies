@@ -3,16 +3,22 @@ import { AddSelectFieldButton } from '../AddSelectFieldButton';
 import { SelectList } from '../SelectList'
 
 interface SelectListState{
-	options: any[];
+	options: Array<any>;
 	amountOfSelects: number;
+	selectValues: Array<number>;
+}
+
+interface State{
+	selectListState: SelectListState;
 }
 
 interface Props{
-	selectListState: SelectListState
+	state: State;
+	dispatch: Function;
 }
 
-export const App: React.FC<Props> = ({selectListState}) =>
+export const App: React.FC<Props> = ({state, dispatch}) =>
 	<div className="App">
-		<SelectList amountOfSelects = {selectListState.amountOfSelects} options = {selectListState.options} />
-		<AddSelectFieldButton/>
+		<SelectList state = {state.selectListState} dispatch = {dispatch}/>
+		<AddSelectFieldButton dispatch={dispatch}/>
 	</div>
