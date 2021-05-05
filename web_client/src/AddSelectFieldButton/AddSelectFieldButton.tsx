@@ -1,19 +1,16 @@
 import * as React from 'react';
 
+import { addSelectActionCreator } from '../Redux/selectListReducer'
+
 interface Props{
 	dispatch: Function;
 }
 
-type Action = {
-	type: string
+interface Action{
+	type: string;
 }
 
-const addSelectActionCreator = () =>{
-	const action:Action = {
-		type: 'ADD-SELECT'
-	}
-	return action;
-}
+
 
 export const AddSelectFieldButton: React.FC<Props> = ({dispatch}) =>{
 

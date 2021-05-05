@@ -2,14 +2,14 @@ import * as React from 'react';
 import { AddSelectFieldButton } from '../AddSelectFieldButton';
 import { SelectList } from '../SelectList'
 
-interface SelectListState{
+interface SelectList{
 	options: Array<any>;
 	amountOfSelects: number;
 	selectValues: Array<number>;
 }
 
 interface State{
-	selectListState: SelectListState;
+	selectList: SelectList;
 }
 
 interface Props{
@@ -19,6 +19,6 @@ interface Props{
 
 export const App: React.FC<Props> = ({state, dispatch}) =>
 	<div className="App">
-		<SelectList state = {state.selectListState} dispatch = {dispatch}/>
+		<SelectList state = {state.selectList} dispatch = {dispatch}/>
 		<AddSelectFieldButton dispatch={dispatch}/>
 	</div>

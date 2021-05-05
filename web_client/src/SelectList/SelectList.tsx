@@ -1,5 +1,7 @@
 import * as React from 'react'
 
+import { updateSelectValueActionCreator } from '../Redux/selectListReducer'
+
 
 interface Option{
 	name: string;
@@ -17,26 +19,13 @@ interface Props{
 	dispatch: Function;
 }
 
-type ActionData = {
-	selectId: number,
-	value: number
+interface Action{
+	type: string;
+	data?: any;
 }
 
-type Action = {
-	type: string,
-	data: ActionData
-}
 
-const updateSelectValueActionCreator = (id:number, value:number)=>{
-	const action:Action = {
-		type: 'UPDATE-SELECT-VALUE',
-		data:{
-			selectId: id,
-			value: value
-		}
-	}
-	return action;
-}
+
 
 export const SelectList: React.FC<Props> = ({state, dispatch}) => {
 
