@@ -1,2 +1,4 @@
 /web_client/node_modules
 /web_client/build/*
+/web_client/src/Redux/oldStore
+/Server/venv

@@ -7,11 +7,13 @@ module.exports = {
 	mode: 'production',
 	output:{
 		filename: '[name]-[fullhash].js',
-		path: path.resolve(__dirname, 'build')
+		path: path.resolve(__dirname, 'build', 'static')
 	},
 	plugins:[
 		new htmlWebpackPlugin({
-			template: path.resolve(__dirname, 'src', 'index.html')
+			filename: path.resolve(__dirname, 'build', 'templates', 'index.html'),
+			template: path.resolve(__dirname, 'src', 'index.html'),
+			publicPath: '/static/'
 		}),
 		new webpack.HotModuleReplacementPlugin()
 	],
