@@ -124,14 +124,33 @@ type State = {
 
 const initialState: State = {
 	options: [
+		new Option('water'),
 		new Option('Milk'),
-		new Option('Cheese', 0),
+		new Option('Cheese', 1),
 		new Option('pork'),
 		new Option('beef'),
-		new Option('sausage', 2,3),
+		new Option('sausage', 3,4,13),
 		new Option('wheat'),
-		new Option('bread', 5),
-		new Option('sandwitch', 1,4,6),
+		new Option('bread', 0, 24),
+		new Option('sandwitch', 2,5,7),
+		new Option('pasta', 6, 0),
+		new Option('bacon', 3),
+		new Option('egg'),
+		new Option('salt'),
+		new Option('pepper'),
+		new Option('Carbonara', 9, 10, 11, 12, 13),
+		new Option('basil'),
+		new Option('pasta with meatballs', 3,4,9,15),
+		new Option('fried egg', 11),
+		new Option('sugar'),
+		new Option('flour', 6),
+		new Option('apples'),
+		new Option('apple jam', 20, 18),
+		new Option('yeast dough', 0, 19, 11, 12, 18, 23),
+		new Option('yeast'),
+		new Option('bread dough', 0, 6),
+		new Option('apple pie', 21, 22),
+
 	],
 	amountOfSelects: 0,
 	selectValues: [],
@@ -151,7 +170,7 @@ export const selectListReducer = (state: State = initialState, action:{type:stri
 			}
 			return state;
 		case UPDATE_SELECT_VALUE:
-			state.selectValues[action.data.selectId] = action.data.value;
+			state.selectValues[action.data.selectId] = parseInt(action.data.value);
 			return state;
 		case SEND_SORTING_REQUEST:
 			state.ordered = action.data.ordered;

@@ -1,6 +1,6 @@
 import * as React from 'react'
 import { NavLink } from 'react-router-dom'
-//import { sendSortingReqestActionCreator } from '../Redux/selectListReducer'
+
 
 export const SortButton:React.FC = () => {
 

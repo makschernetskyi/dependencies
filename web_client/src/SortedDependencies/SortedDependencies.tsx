@@ -1,5 +1,6 @@
 import * as React from 'react'
 import {useEffect} from 'react'
+import { useLocation } from 'react-router-dom'
 import { sendSortingReqestActionCreator } from '../Redux/selectListReducer'
 
 interface Option{
@@ -33,7 +34,7 @@ export const SortedDependencies:React.FC<Props> = ({state,dispatch}) => {
 
 	return (
 		<div>
-			{state?.ordered.map((index:number) => <div key={index}>{state.options[index].name + ''}<br/></div>)}
+			{state?.ordered.map(index => <p key={index} style={{color:state.selectValues.includes(index)?'red':'black'}}>{state.options[index].name}<br/></p>)}
 		</div>
 	)
 }
